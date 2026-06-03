@@ -1,228 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CaliArtWorks Portfolio</title>
-  <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaliArtWorks Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
+
 <body>
-  <header>
-    <div class="navbar">
-      <div class="brand"><span>CALI</span>ARTWORKS</div>
-      <div class="nav-links">
-        <button class="nav-button" onclick="showCategory('models')">Models</button>
-        <button class="nav-button" onclick="showCategory('skins')">Skins</button>
-        <button class="nav-button" onclick="showCategory('texture')">Texture</button>
-        <button class="nav-button" onclick="showCategory('animations')">Animations</button>
-        <button class="nav-button" onclick="showCategory('ui')">UI</button>
-        <a href="about.html" class="about-button">About Me</a>
-      </div>
-    </div>
-  </header>
+    <header>
+        <div class="navbar">
+            <div class="brand"><span>CALI</span>ARTWORKS</div>
+            <div class="nav-links">
+                <button class="nav-button" onclick="showCategory('models')">Models</button>
+                <button class="nav-button" onclick="showCategory('skins')">Skins</button>
+                <button class="nav-button" onclick="showCategory('texture')">Texture</button>
+                <button class="nav-button" onclick="showCategory('animations')">Animations</button>
+                <button class="nav-button" onclick="showCategory('ui')">UI</button>
+                <a href="about.html" class="about-button">About Me</a>
+            </div>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h1>Vibrant dark mode portfolio for CaliArtWorks</h1>
-    <p>Explore a modern gallery built for creative gaming assets, with models, skins, textures, and animations presented in bold dark visuals. Tap the tabs to reveal your best work categories and jump to About Me when you're ready to learn more.</p>
+    <section class="hero">
+        <h1>Minecraft Art Works - CaliArtWorks</h1>
+        <p>Explore a modern gallery built for creative gaming assets, with models, skins, textures, and animations presented in bold dark visuals.</p>
 
-    <div class="chooser">
-      <button class="active" data-target="models" onclick="showCategory('models')">Models</button>
-      <button data-target="skins" onclick="showCategory('skins')">Skins</button>
-      <button data-target="texture" onclick="showCategory('texture')">Texture</button>
-      <button data-target="animations" onclick="showCategory('animations')">Animations</button>
-      <button data-target="ui" onclick="showCategory('ui')">UI</button>
-    </div>
-  </section>
+        <div class="chooser">
+            <button class="active" data-target="models" onclick="showCategory('models')">Models</button>
+            <button data-target="skins" onclick="showCategory('skins')">Skins</button>
+            <button data-target="texture" onclick="showCategory('texture')">Texture</button>
+            <button data-target="animations" onclick="showCategory('animations')">Animations</button>
+            <button data-target="ui" onclick="showCategory('ui')">UI</button>
+        </div>
+    </section>
 
-  <main>
-    <div id="models" class="section active"></div>
-    <div id="skins" class="section"></div>
-    <div id="texture" class="section"></div>
-    <div id="animations" class="section"></div>
-    <div id="ui" class="section"></div>
-  </main>
+    <main>
+        <div id="models" class="section active"></div>
+        <div id="skins" class="section"></div>
+        <div id="texture" class="section"></div>
+        <div id="animations" class="section"></div>
+        <div id="ui" class="section"></div>
+    </main>
 
-  <script>
-    const buttons = document.querySelectorAll('.chooser button');
+    <script>
+        const buttons = document.querySelectorAll('.chooser button');
 
-    const galleryData = {
-      models: [
-        {
-          title: 'Entities',
-          folder: 'bb-model-images/entities/',
-          description: 'High-detail characters, NPCs, creatures, and environment companions.',
-          files: [
-            '3_head_creaper.png', 'beast_titan.png', 'Bluegill.png', 'boss_spider.png', 'boss_zombie.png', 'bunny.png',
-            'carp.png', 'Cloud.png', 'Crappie.png', 'custom_zombie.png', 'dino.png', 'dragons.png', 'dsa.png', 'freddy.png',
-            'FT5a1XjUYAAzc5s.jfif', 'golden armor main.png', 'huggy_waggy.png', 'large mouth bass.png', 'mini_golem.png',
-            'mommy_long_legs.png', 'monster_horn.png', 'paradise_bird.png', 'pj.png', 'Screenshot 2024-10-21 102900.png',
-            'Screenshot 2024-10-21 110209.png', 'seamonster.png', 'snake.png', 'sonic.png'
-          ]
-        },
-        {
-          title: 'Weapons & Tools',
-          folder: 'bb-model-images/weapon_tools/',
-          description: 'Weapon and tool previews, from swords to guns to futuristic utility props.',
-          files: [
-            'Adurite_pickaxe.png', 'akgun.png', 'blaster.png', 'brush_cutter.png', 'coral_axe.png', 'double_axe.png',
-            'fallout_pistol.png', 'forest_sword.png', 'Futuristic_space_sword.png', 'Goldy_Clock_Pickaxe.png', 'knuckles.png',
-            'laser.png', 'pipe_pistol.png', 'Screenshot 2024-10-21 111235.png', 'Screenshot 2024-10-21 113417.png',
-            'Screenshot 2024-10-21 113857.png', 'valentine axe.png', 'void axe.png', 'volcanic_pickaxe.png'
-          ]
-        },
-        {
-          title: 'Items',
-          folder: 'bb-model-images/items/',
-          description: 'Collectibles and prop models for furniture, utilities, and world-build assets.',
-          files: [
-            'chair_table.png', 'furniture.png', 'furniture2.png', 'furniture3.png', 'gamerchair.png', 'pot.png',
-            'Screenshot 2024-08-07 115950.png', 'Screenshot 2024-10-21 111619.png', 'Screenshot 2024-10-21 111701.png',
-            'Screenshot 2024-10-21 111721.png', 'Screenshot 2024-10-21 114459.png', 'Screenshot 2024-10-21 114527.png',
-            'Screenshot 2026-06-01 181901.png', 'villager_statue.png'
-          ]
-        },
-        {
-          title: 'Vehicles',
-          folder: 'bb-model-images/vehicles/',
-          description: 'Vehicle models and transport previews for cars, helicopters, and futuristic rides.',
-          files: [
-            'Brabus G900 Model.png', 'broken_car.png', 'car.png', 'helicopter.png', 'jeep.png', 'Lamborghini Aventador.png',
-            'McLaren 720S.png', 'motor.png', 'OPEL MANTA CAR 2 MODEL.png', 'Rolls-Royce Phantom.png',
-            'Screenshot 2024-08-09 154909.png', 'Screenshot 2024-08-11 151008.png', 'Screenshot 2024-09-10 200832.png',
-            'Screenshot 2024-10-06 144537.png', 'Screenshot 2024-10-21 114609.png', 'Screenshot 2024-10-21 115008.png',
-            'Screenshot 2024-10-21 115047.png', 
-          ]
-        }
-      ],
-      skins: [
-        {
-          title: '16x16 Skins',
-          folder: 'bb-model-images/Skins/16x16/',
-          description: 'Pixel skins made for retro charm and compact character styling.',
-          files: ['skin1.png', 'skin2.png']
-        },
-        {
-          title: '32x32 Skins',
-          folder: 'bb-model-images/Skins/32x32/',
-          description: 'Medium-resolution skin sets with extra detail and clean readability.',
-          files: ['skin0.png', 'skin1.png', 'skin10.png', 'skin11.png', 'skin12.png', 'skin2.png', 'skin3.png', 'skin4.png', 'skin5.png', 'skin6.png', 'skin8.png', 'skin9.png']
-        }
-      ],
-      texture: [
-        {
-          title: 'Item Textures',
-          folder: 'bb-model-images/textures/2ds/',
-          description: 'Clean item texture sheets designed for gear, consumables, and on-screen props.',
-          files: ['1.png']
-        },
-        {
-          title: 'Block Textures',
-          folder: 'bb-model-images/textures/blocks/',
-          description: 'Environment and block textures made for stylized world-building and terrain.',
-          files: ['1.png']
-        }
-      ],
-      animations: [
-        {
-          title: 'Mob Animations',
-          folder: 'bb-model-images/animation/',
-          description: 'Creature and enemy animation previews designed for motion-rich gameplay.',
-          files: ['boss_spider.gif', 'Pterodactyl.gif', 'Triceratops.gif']
-        },
-        {
-          title: 'Weapon Animations',
-          folder: 'bb-model-images/animation/',
-          description: 'Action-focused weapon motion previews that convey impact and pacing.',
-          files: ['fb_axe.gif']
-        },
-        {
-          title: 'Vehicle Animations',
-          folder: 'bb-model-images/animation/',
-          description: 'Animated vehicle previews that showcase momentum, effects, and speed.',
-          files: ['lightning_mcqueen.gif', 'dino.mp4']
-        }
-      ],
-      ui: [
-        {
-          title: 'UI Work',
-          description: 'UI assets are on the way — a dedicated interface gallery will be added soon.',
-          files: []
-        }
-      ]
-    };
+        const galleryData = {
+            models: [
+                {
+                    title: 'Entities',
+                    folder: 'bb-model-images/entities/',
+                    description: 'High-detail characters, NPCs, creatures, and environment companions.',
+                    files: [
+                        '3_head_creaper.png', 'beast_titan.png', 'Bluegill.png', 'boss_spider.png', 'boss_zombie.png', 'bunny.png',
+                        'carp.png', 'Cloud.png', 'Crappie.png', 'custom_zombie.png', 'dino.png', 'dragons.png', 'dsa.png', 'freddy.png',
+                        'FT5a1XjUYAAzc5s.jfif', 'golden armor main.png', 'huggy_waggy.png', 'large mouth bass.png', 'mini_golem.png',
+                        'mommy_long_legs.png', 'monster_horn.png', 'paradise_bird.png', 'pj.png', 'Screenshot 2024-10-21 102900.png',
+                        'Screenshot 2024-10-21 110209.png', 'seamonster.png', 'snake.png', 'sonic.png'
+                    ]
+                },
+                {
+                    title: 'Weapons & Tools',
+                    folder: 'bb-model-images/weapon_tools/',
+                    description: 'Weapon and tool previews, from swords to guns to futuristic utility props.',
+                    files: [
+                        'Adurite_pickaxe.png', 'akgun.png', 'blaster.png', 'brush_cutter.png', 'coral_axe.png', 'double_axe.png',
+                        'fallout_pistol.png', 'forest_sword.png', 'Futuristic_space_sword.png', 'Goldy_Clock_Pickaxe.png', 'knuckles.png',
+                        'laser.png', 'pipe_pistol.png', 'Screenshot 2024-10-21 111235.png', 'Screenshot 2024-10-21 113417.png',
+                        'Screenshot 2024-10-21 113857.png', 'valentine axe.png', 'void axe.png', 'volcanic_pickaxe.png'
+                    ]
+                },
+                {
+                    title: 'Items',
+                    folder: 'bb-model-images/items/',
+                    description: 'Collectibles and prop models for furniture, utilities, and world-build assets.',
+                    files: [
+                        'chair_table.png', 'furniture.png', 'furniture2.png', 'furniture3.png', 'gamerchair.png', 'pot.png',
+                        'Screenshot 2024-08-07 115950.png', 'Screenshot 2024-10-21 111619.png', 'Screenshot 2024-10-21 111701.png',
+                        'Screenshot 2024-10-21 111721.png', 'Screenshot 2024-10-21 114459.png', 'Screenshot 2024-10-21 114527.png',
+                        'Screenshot 2026-06-01 181901.png', 'villager_statue.png'
+                    ]
+                },
+                {
+                    title: 'Vehicles',
+                    folder: 'bb-model-images/vehicles/',
+                    description: 'Vehicle models and transport previews for cars, helicopters, and futuristic rides.',
+                    files: [
+                        'Brabus G900 Model.png', 'broken_car.png', 'car.png', 'helicopter.png', 'jeep.png', 'Lamborghini Aventador.png',
+                        'McLaren 720S.png', 'motor.png', 'OPEL MANTA CAR 2 MODEL.png', 'Rolls-Royce Phantom.png',
+                        'Screenshot 2024-08-09 154909.png', 'Screenshot 2024-08-11 151008.png', 'Screenshot 2024-09-10 200832.png',
+                        'Screenshot 2024-10-06 144537.png', 'Screenshot 2024-10-21 114609.png', 'Screenshot 2024-10-21 115008.png',
+                        'Screenshot 2024-10-21 115047.png',
+                    ]
+                }
+            ],
+            skins: [
+                {
+                    title: '16x16 Skins',
+                    folder: 'bb-model-images/Skins/16x16/',
+                    description: 'Pixel skins made for retro charm and compact character styling.',
+                    files: ['skin1.png', 'skin2.png']
+                },
+                {
+                    title: '32x32 Skins',
+                    folder: 'bb-model-images/Skins/32x32/',
+                    description: 'Medium-resolution skin sets with extra detail and clean readability.',
+                    files: ['skin0.png', 'skin1.png', 'skin10.png', 'skin11.png', 'skin12.png', 'skin2.png', 'skin3.png', 'skin4.png', 'skin5.png', 'skin6.png', 'skin8.png', 'skin9.png']
+                }
+            ],
+            texture: [
+                {
+                    title: 'Item Textures',
+                    folder: 'bb-model-images/textures/2ds/',
+                    description: 'Clean item texture sheets designed for gear, consumables, and on-screen props.',
+                    files: ['1.png']
+                },
+                {
+                    title: 'Block Textures',
+                    folder: 'bb-model-images/textures/blocks/',
+                    description: 'Environment and block textures made for stylized world-building and terrain.',
+                    files: ['1.png']
+                }
+            ],
+            animations: [
+                {
+                    title: 'Mob Animations',
+                    folder: 'bb-model-images/animation/',
+                    description: 'Creature and enemy animation previews designed for motion-rich gameplay.',
+                    files: ['boss_spider.gif', 'Pterodactyl.gif', 'Triceratops.gif']
+                },
+                {
+                    title: 'Weapon Animations',
+                    folder: 'bb-model-images/animation/',
+                    description: 'Action-focused weapon motion previews that convey impact and pacing.',
+                    files: ['fb_axe.gif']
+                },
+                {
+                    title: 'Vehicle Animations',
+                    folder: 'bb-model-images/animation/',
+                    description: 'Animated vehicle previews that showcase momentum, effects, and speed.',
+                    files: ['lightning_mcqueen.gif', 'dino.mp4']
+                }
+            ],
+            ui: [
+                {
+                    title: 'UI Work',
+                    description: 'UI assets are on the way — a dedicated interface gallery will be added soon.',
+                    files: []
+                }
+            ]
+        };
 
-    function createMediaCard(categoryTitle, description, filePath, fileType) {
-      const card = document.createElement('article');
-      card.className = 'card';
+        function createMediaCard(categoryTitle, description, filePath, fileType) {
+            const card = document.createElement('article');
+            card.className = 'card';
 
-      const media = document.createElement(fileType === 'video' ? 'video' : 'img');
-      media.src = filePath;
-      media.alt = `${categoryTitle} preview`;
-      if (fileType === 'video') {
-        media.controls = true;
-        media.muted = true;
-        media.loop = true;
-      }
-      card.appendChild(media);
+            const media = document.createElement(fileType === 'video' ? 'video' : 'img');
+            media.src = filePath;
+            media.alt = `${categoryTitle} preview`;
+            if (fileType === 'video') {
+                media.controls = true;
+                media.muted = true;
+                media.loop = true;
+            }
+            card.appendChild(media);
 
-      return card;
-    }
-
-    function renderSection(sectionId) {
-      const container = document.getElementById(sectionId);
-      container.innerHTML = '';
-
-      galleryData[sectionId].forEach(group => {
-        if (!group.files.length) {
-          const placeholder = document.createElement('article');
-          placeholder.className = 'card';
-          const placeholderBox = document.createElement('div');
-          placeholderBox.className = 'media-placeholder';
-          placeholderBox.textContent = group.description;
-          placeholder.appendChild(placeholderBox);
-          const content = document.createElement('div');
-          content.className = 'card-content';
-          const title = document.createElement('h3');
-          title.textContent = group.title;
-          content.appendChild(title);
-          const subtitle = document.createElement('p');
-          subtitle.textContent = 'This gallery is coming soon.';
-          content.appendChild(subtitle);
-          placeholder.appendChild(content);
-          container.appendChild(placeholder);
-          return;
+            return card;
         }
 
-        group.files.forEach(fileName => {
-          const filePath = `${group.folder}${fileName}`;
-          const fileType = fileName.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
-          const cardTitle = group.title;
-          container.appendChild(createMediaCard(cardTitle, group.description, filePath, fileType));
-        });
-      });
-    }
+        function renderSection(sectionId) {
+            const container = document.getElementById(sectionId);
+            container.innerHTML = '';
 
-    function showCategory(category) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.toggle('active', section.id === category);
-      });
-      buttons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.target === category);
-      });
-      document.querySelectorAll('.nav-button').forEach(btn => {
-        if (btn.textContent.toLowerCase() === category) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
+            galleryData[sectionId].forEach(group => {
+                if (!group.files.length) {
+                    const placeholder = document.createElement('article');
+                    placeholder.className = 'card';
+                    const placeholderBox = document.createElement('div');
+                    placeholderBox.className = 'media-placeholder';
+                    placeholderBox.textContent = group.description;
+                    placeholder.appendChild(placeholderBox);
+                    const content = document.createElement('div');
+                    content.className = 'card-content';
+                    const title = document.createElement('h3');
+                    title.textContent = group.title;
+                    content.appendChild(title);
+                    const subtitle = document.createElement('p');
+                    subtitle.textContent = 'This gallery is coming soon.';
+                    content.appendChild(subtitle);
+                    placeholder.appendChild(content);
+                    container.appendChild(placeholder);
+                    return;
+                }
+
+                group.files.forEach(fileName => {
+                    const filePath = `${group.folder}${fileName}`;
+                    const fileType = fileName.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
+                    const cardTitle = group.title;
+                    container.appendChild(createMediaCard(cardTitle, group.description, filePath, fileType));
+                });
+            });
         }
-      });
-    }
 
-    function renderGallery() {
-      Object.keys(galleryData).forEach(renderSection);
-    }
+        function showCategory(category) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.toggle('active', section.id === category);
+            });
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.target === category);
+            });
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                if (btn.textContent.toLowerCase() === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
 
-    renderGallery();
-  </script>
+        function renderGallery() {
+            Object.keys(galleryData).forEach(renderSection);
+        }
+
+        renderGallery();
+    </script>
 </body>
+
 </html>
