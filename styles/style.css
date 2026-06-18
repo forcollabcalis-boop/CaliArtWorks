@@ -177,6 +177,20 @@ main {
   display: block;
   margin-bottom: 18px;
   object-fit: cover;
+
+}
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  margin-bottom: 18px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
 }
 
 .media-placeholder {
